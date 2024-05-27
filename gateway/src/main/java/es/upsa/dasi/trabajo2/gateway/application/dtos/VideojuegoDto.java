@@ -1,4 +1,4 @@
-package es.upsa.dasi.trabajoii.gateway.application.dtos;
+package es.upsa.dasi.trabajo2.gateway.application.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

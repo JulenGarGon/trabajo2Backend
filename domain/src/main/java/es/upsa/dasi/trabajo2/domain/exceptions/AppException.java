@@ -1,4 +1,4 @@
-package es.upsa.dasi.trabajo1.domain.exceptions;
+package es.upsa.dasi.trabajo2.domain.exceptions;
 
 public class AppException extends Exception{
     public AppException() {

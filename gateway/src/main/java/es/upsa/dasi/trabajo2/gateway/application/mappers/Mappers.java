@@ -1,9 +1,9 @@
-package es.upsa.dasi.trabajoii.gateway.application.mappers;
+package es.upsa.dasi.trabajo2.gateway.application.mappers;
 
-import es.upsa.dasi.trabajo1.domain.entities.Desarrollador;
-import es.upsa.dasi.trabajo1.domain.entities.Videojuego;
-import es.upsa.dasi.trabajoi.gateway.application.dtos.DesarrolladorDto;
-import es.upsa.dasi.trabajoi.gateway.application.dtos.VideojuegoDto;
+import es.upsa.dasi.trabajo2.domain.entities.Desarrollador;
+import es.upsa.dasi.trabajo2.domain.entities.Videojuego;
+import es.upsa.dasi.trabajo2.gateway.application.dtos.DesarrolladorDto;
+import es.upsa.dasi.trabajo2.gateway.application.dtos.VideojuegoDto;
 import jakarta.enterprise.context.ApplicationScoped;
 
 import java.util.function.BiFunction;

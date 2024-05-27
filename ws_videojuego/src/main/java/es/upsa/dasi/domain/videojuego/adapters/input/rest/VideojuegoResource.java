@@ -2,8 +2,8 @@ package es.upsa.dasi.domain.videojuego.adapters.input.rest;
 
 import es.upsa.dasi.domain.videojuego.adapters.input.rest.dtos.VideojuegoDto;
 import es.upsa.dasi.domain.videojuego.application.*;
-import es.upsa.dasi.trabajo1.domain.entities.Videojuego;
-import es.upsa.dasi.trabajo1.domain.exceptions.AppException;
+import es.upsa.dasi.trabajo2.domain.entities.Videojuego;
+import es.upsa.dasi.trabajo2.domain.exceptions.AppException;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Context;

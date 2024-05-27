@@ -1,11 +1,9 @@
-package es.upsa.dasi.trabajo1.domain.entities;
+package es.upsa.dasi.trabajo2.domain.entities;
 
 import lombok.Builder;
 import lombok.With;
 
 import java.time.LocalDate;
-import java.util.Date;
-import java.util.Locale;
 
 @Builder(setterPrefix = "with")
 @With

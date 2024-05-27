@@ -1,11 +1,11 @@
-package es.upsa.dasi.trabajoii.gateway.domain.impl;
+package es.upsa.dasi.trabajo2.gateway.domain.impl;
 
-import es.upsa.dasi.trabajo1.domain.entities.Desarrollador;
-import es.upsa.dasi.trabajo1.domain.entities.Videojuego;
-import es.upsa.dasi.trabajo1.domain.exceptions.AppException;
-import es.upsa.dasi.trabajoi.gateway.adapters.output.daos.DesarrolladorDao;
-import es.upsa.dasi.trabajoi.gateway.adapters.output.daos.VideojuegoDao;
-import es.upsa.dasi.trabajoi.gateway.domain.Repository;
+import es.upsa.dasi.trabajo2.domain.entities.Desarrollador;
+import es.upsa.dasi.trabajo2.domain.entities.Videojuego;
+import es.upsa.dasi.trabajo2.domain.exceptions.AppException;
+import es.upsa.dasi.trabajo2.gateway.adapters.output.daos.DesarrolladorDao;
+import es.upsa.dasi.trabajo2.gateway.adapters.output.daos.VideojuegoDao;
+import es.upsa.dasi.trabajo2.gateway.domain.Repository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 

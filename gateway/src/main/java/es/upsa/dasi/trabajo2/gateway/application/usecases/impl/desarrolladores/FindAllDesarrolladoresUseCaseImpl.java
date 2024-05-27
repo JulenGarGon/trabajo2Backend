@@ -1,10 +1,10 @@
-package es.upsa.dasi.trabajoii.gateway.application.usecases.impl.desarrolladores;
+package es.upsa.dasi.trabajo2.gateway.application.usecases.impl.desarrolladores;
 
 
-import es.upsa.dasi.trabajo1.domain.entities.Desarrollador;
-import es.upsa.dasi.trabajo1.domain.exceptions.AppException;
-import es.upsa.dasi.trabajoi.gateway.application.usecases.desarrolladores.FindAllDesarrolladoresUseCase;
-import es.upsa.dasi.trabajoi.gateway.domain.Repository;
+import es.upsa.dasi.trabajo2.domain.entities.Desarrollador;
+import es.upsa.dasi.trabajo2.domain.exceptions.AppException;
+import es.upsa.dasi.trabajo2.gateway.application.usecases.desarrolladores.FindAllDesarrolladoresUseCase;
+import es.upsa.dasi.trabajo2.gateway.domain.Repository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 

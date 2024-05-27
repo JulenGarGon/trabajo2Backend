@@ -1,13 +1,13 @@
-package es.upsa.dasi.trabajoii.gateway.infraestructure.ws;
+package es.upsa.dasi.trabajo2.gateway.infraestructure.ws;
 
-import es.upsa.dasi.trabajo1.domain.entities.Desarrollador;
-import es.upsa.dasi.trabajo1.domain.exceptions.AppException;
-import es.upsa.dasi.trabajo1.domain.exceptions.EntityNotFoundException;
-import es.upsa.dasi.trabajoi.gateway.adapters.output.daos.DesarrolladorDao;
-import es.upsa.dasi.trabajoi.gateway.application.dtos.DesarrolladorDto;
-import es.upsa.dasi.trabajoi.gateway.application.dtos.ErrorDto;
-import es.upsa.dasi.trabajoi.gateway.application.mappers.Mappers;
-import es.upsa.dasi.trabajoii.gateway.infraestructure.ws.utils.ResourceUris;
+import es.upsa.dasi.trabajo2.domain.entities.Desarrollador;
+import es.upsa.dasi.trabajo2.domain.exceptions.AppException;
+import es.upsa.dasi.trabajo2.domain.exceptions.EntityNotFoundException;
+import es.upsa.dasi.trabajo2.gateway.infraestructure.ws.utils.ResourceUris;
+import es.upsa.dasi.trabajo2.gateway.adapters.output.daos.DesarrolladorDao;
+import es.upsa.dasi.trabajo2.gateway.application.dtos.DesarrolladorDto;
+import es.upsa.dasi.trabajo2.gateway.application.dtos.ErrorDto;
+import es.upsa.dasi.trabajo2.gateway.application.mappers.Mappers;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.client.Client;

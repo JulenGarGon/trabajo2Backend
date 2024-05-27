@@ -1,10 +1,10 @@
-package es.upsa.dasi.trabajoii.gateway.adapters.input.rest;
+package es.upsa.dasi.trabajo2.gateway.adapters.input.rest;
 
-import es.upsa.dasi.trabajo1.domain.entities.Videojuego;
-import es.upsa.dasi.trabajo1.domain.exceptions.AppException;
-import es.upsa.dasi.trabajoi.gateway.application.dtos.VideojuegoDto;
-import es.upsa.dasi.trabajoi.gateway.application.mappers.Mappers;
-import es.upsa.dasi.trabajoi.gateway.application.usecases.videojuegos.*;
+import es.upsa.dasi.trabajo2.domain.entities.Videojuego;
+import es.upsa.dasi.trabajo2.domain.exceptions.AppException;
+import es.upsa.dasi.trabajo2.gateway.application.dtos.VideojuegoDto;
+import es.upsa.dasi.trabajo2.gateway.application.mappers.Mappers;
+import es.upsa.dasi.trabajo2.gateway.application.usecases.videojuegos.*;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Context;

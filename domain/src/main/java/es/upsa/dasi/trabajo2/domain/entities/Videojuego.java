@@ -1,4 +1,4 @@
-package es.upsa.dasi.trabajo1.domain.entities;
+package es.upsa.dasi.trabajo2.domain.entities;
 
 import lombok.Builder;
 import lombok.With;

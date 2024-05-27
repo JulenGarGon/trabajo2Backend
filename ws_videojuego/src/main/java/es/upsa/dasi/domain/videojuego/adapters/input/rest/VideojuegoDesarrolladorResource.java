@@ -1,7 +1,7 @@
 package es.upsa.dasi.domain.videojuego.adapters.input.rest;
 
 import es.upsa.dasi.domain.videojuego.application.FindVideojuegosByIdDesarrolladorUseCase;
-import es.upsa.dasi.trabajo1.domain.exceptions.AppException;
+import es.upsa.dasi.trabajo2.domain.exceptions.AppException;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;

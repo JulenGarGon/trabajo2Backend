@@ -2,8 +2,8 @@ package es.upsa.dasi.domain.desarrollador.application.impl;
 
 import es.upsa.dasi.domain.desarrollador.application.UpdateDesarrolladorByIdUseCase;
 import es.upsa.dasi.domain.desarrollador.domain.Repository;
-import es.upsa.dasi.trabajo1.domain.entities.Desarrollador;
-import es.upsa.dasi.trabajo1.domain.exceptions.AppException;
+import es.upsa.dasi.trabajo2.domain.entities.Desarrollador;
+import es.upsa.dasi.trabajo2.domain.exceptions.AppException;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 

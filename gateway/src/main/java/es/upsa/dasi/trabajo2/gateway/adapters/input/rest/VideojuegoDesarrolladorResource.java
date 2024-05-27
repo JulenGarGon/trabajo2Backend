@@ -1,8 +1,8 @@
-package es.upsa.dasi.trabajoii.gateway.adapters.input.rest;
+package es.upsa.dasi.trabajo2.gateway.adapters.input.rest;
 
 
-import es.upsa.dasi.trabajo1.domain.exceptions.AppException;
-import es.upsa.dasi.trabajoi.gateway.application.usecases.videojuegos.FindVideojuegosByIdDesarrolladorUseCase;
+import es.upsa.dasi.trabajo2.domain.exceptions.AppException;
+import es.upsa.dasi.trabajo2.gateway.application.usecases.videojuegos.FindVideojuegosByIdDesarrolladorUseCase;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;

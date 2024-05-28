@@ -1,4 +1,4 @@
-package es.upsa.dasi.domain.videojuego.adapters.input.rest;
+package es.upsa.dasi.domain.videojuego.adapters.input.rest.providers;
 
 import es.upsa.dasi.domain.videojuego.application.FindVideojuegosByIdDesarrolladorUseCase;
 import es.upsa.dasi.trabajo2.domain.exceptions.AppException;

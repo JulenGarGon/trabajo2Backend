@@ -2,6 +2,7 @@ package es.upsa.dasi.trabajo2.gateway.domain.impl;
 
 import es.upsa.dasi.trabajo2.domain.entities.Desarrollador;
 import es.upsa.dasi.trabajo2.domain.entities.Videojuego;
+import es.upsa.dasi.trabajo2.domain.entities.VideojuegosDesarrolladorFull;
 import es.upsa.dasi.trabajo2.domain.exceptions.AppException;
 import es.upsa.dasi.trabajo2.gateway.adapters.output.daos.DesarrolladorDao;
 import es.upsa.dasi.trabajo2.gateway.adapters.output.daos.VideojuegoDao;
@@ -9,6 +10,8 @@ import es.upsa.dasi.trabajo2.gateway.domain.Repository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,6 +29,11 @@ public class RepositoryImpl implements Repository {
     @Override
     public List<Videojuego> findAllVideojuegos() throws AppException {
         return videojuegoDao.findAllVideojuegos();
+    }
+
+    @Override
+    public List<Videojuego> findVideojuegosByIds(Collection<Integer> ids) throws AppException {
+        return videojuegoDao.findVideojuegosByIds(ids);
     }
 
     @Override
@@ -48,6 +56,7 @@ public class RepositoryImpl implements Repository {
         if (videojuego.id() == 0)   return videojuegoDao.save(videojuego);
         else                        return videojuegoDao.updateVideojuego(videojuego);
     }
+
 
     //DESARROLLADORES
 

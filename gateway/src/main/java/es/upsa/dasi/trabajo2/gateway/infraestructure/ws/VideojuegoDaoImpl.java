@@ -18,8 +18,11 @@ import jakarta.ws.rs.core.HttpHeaders;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @ApplicationScoped
 public class VideojuegoDaoImpl implements VideojuegoDao {
@@ -43,6 +46,28 @@ public class VideojuegoDaoImpl implements VideojuegoDao {
                     List<Videojuego> data = response.readEntity( new GenericType<List<Videojuego>>() {});
                     return data;
                 //Se ha devuelto un error 500
+                default:
+                    ErrorDto error = response.readEntity(ErrorDto.class);
+                    throw new AppException(error.getMessage());
+            }
+        }
+    }
+
+    @Override
+    public List<Videojuego> findVideojuegosByIds(Collection<Integer> ids) throws AppException {
+
+        try (Client client = ClientBuilder.newClient()){
+            Collection<String> strings = ids.stream().map(String::valueOf).collect(Collectors.toList());
+            Response response = client.target(ResourceUris.URI_VIDEOJUEGOS)
+                    .path("/videojuego")
+                    .queryParam("ids", strings.stream().collect(Collectors.joining(",")))
+                    .request(MediaType.APPLICATION_JSON)
+                    .get();
+
+            switch (response.getStatusInfo()){
+                case Response.Status.OK:
+                    List<Videojuego> data = response.readEntity(new GenericType<List<Videojuego>>(){});
+                    return data;
                 default:
                     ErrorDto error = response.readEntity(ErrorDto.class);
                     throw new AppException(error.getMessage());

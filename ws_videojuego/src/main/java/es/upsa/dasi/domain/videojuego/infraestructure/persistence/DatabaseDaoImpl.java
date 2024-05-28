@@ -12,6 +12,7 @@ import jakarta.inject.Inject;
 import javax.sql.DataSource;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -47,6 +48,47 @@ public class DatabaseDaoImpl implements DatabaseDao {
                                             .withNota(rs.getInt(10))
                                             .build());
             }
+        } catch (SQLException sqlException){
+            throw managerSqlExceptions(sqlException);
+        }
+
+        return videojuegos;
+    }
+
+    @Override
+    public List<Videojuego> findVideojuegosByIds(Collection<Integer> ids) throws AppException {
+        final String SQL =  """
+                            SELECT v.id, v.nombre, v.genero, v.estreno, v.portada, v.duracion, v.tamanio, v.ventas, v.desarrollador, v.nota
+                                FROM videojuego v
+                            WHERE v.id = ?
+                            """;
+        List<Videojuego> videojuegos = new ArrayList<>();
+        try (Connection connection = dataSource.getConnection();
+            PreparedStatement ps = connection.prepareStatement(SQL)){
+            for (Integer id : ids) {
+                ps.clearParameters();
+                ps.setInt(1, id);
+                try (ResultSet rs = ps.executeQuery()){
+                    if (rs.next()){
+                        videojuegos.add(Videojuego.builder()
+                                                    .withId(rs.getInt(1))
+                                                    .withNombre(rs.getString(2))
+                                                    .withGenero(rs.getString(3))
+                                                    .withEstreno(rs.getDate(4).toLocalDate())
+                                                    .withPortada(rs.getString(5))
+                                                    .withDuracion(rs.getFloat(6))
+                                                    .withTamanio(rs.getFloat(7))
+                                                    .withVentas(rs.getInt(8))
+                                                    .withDesarrollador(rs.getInt(9))
+                                                    .withNota(rs.getInt(10))
+                                                    .build()
+                                        );
+
+                    }
+                }
+            }
+
+
         } catch (SQLException sqlException){
             throw managerSqlExceptions(sqlException);
         }

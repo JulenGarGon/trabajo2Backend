@@ -1,4 +1,4 @@
-package es.upsa.dasi.trabajo2.gateway.adapters.input.rest;
+package es.upsa.dasi.trabajo2.gateway.adapters.input.rest.providers;
 
 
 import es.upsa.dasi.trabajo2.domain.exceptions.AppException;

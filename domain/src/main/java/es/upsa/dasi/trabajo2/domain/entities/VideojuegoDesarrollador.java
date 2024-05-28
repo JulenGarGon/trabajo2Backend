@@ -15,6 +15,6 @@ public class VideojuegoDesarrollador {
     private int idVideojuego;
 
     @Singular("videojuegoDes")
-    private List<Desarrollador> videojuegosDesarrollados;
+    private List<Videojuego> videojuegosDesarrollados;
 
 }

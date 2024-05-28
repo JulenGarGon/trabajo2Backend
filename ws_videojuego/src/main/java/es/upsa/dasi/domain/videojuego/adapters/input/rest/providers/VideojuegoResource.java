@@ -1,4 +1,4 @@
-package es.upsa.dasi.domain.videojuego.adapters.input.rest;
+package es.upsa.dasi.domain.videojuego.adapters.input.rest.providers;
 
 import es.upsa.dasi.domain.videojuego.adapters.input.rest.dtos.VideojuegoDto;
 import es.upsa.dasi.domain.videojuego.application.*;
@@ -12,6 +12,8 @@ import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.UriInfo;
 
 import java.net.URI;
+import java.util.Collection;
+import java.util.List;
 
 @Path("/videojuego")
 public class VideojuegoResource {
@@ -34,11 +36,16 @@ public class VideojuegoResource {
     @Inject
     UpdateVideojuegosByIdUseCase updateVideojuegosByIdUseCase;
 
+    @Inject
+    FindVideojuegosByIdsUseCase findVideojuegosByIdsUseCase;
+
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response findAllVideojuegos() throws AppException{
+    public Response findAllVideojuegos(@DefaultValue("") @QueryParam("ids") Collection<Integer> ids) throws AppException{
+
+        List<Videojuego> videojuegos = ids.isEmpty()? findAllVideojuegosUseCase.execute() : findVideojuegosByIdsUseCase.execute(ids);
         return  Response.ok()
-                .entity(findAllVideojuegosUseCase.execute())
+                .entity(videojuegos)
                 .build();
     }
 

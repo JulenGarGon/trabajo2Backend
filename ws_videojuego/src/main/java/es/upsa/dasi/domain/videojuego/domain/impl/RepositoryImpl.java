@@ -7,6 +7,7 @@ import es.upsa.dasi.trabajo2.domain.exceptions.AppException;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,6 +20,11 @@ public class RepositoryImpl implements Repository {
     @Override
     public List<Videojuego> findAllVideojuegos() throws AppException {
         return dao.findAllVideojuegos();
+    }
+
+    @Override
+    public List<Videojuego> findVideojuegosByIds(Collection<Integer> ids) throws AppException {
+        return dao.findVideojuegosByIds(ids);
     }
 
     @Override

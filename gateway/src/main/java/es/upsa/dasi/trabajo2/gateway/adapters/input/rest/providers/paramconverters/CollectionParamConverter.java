@@ -18,7 +18,7 @@ public class CollectionParamConverter implements ParamConverter<Collection<Integ
 
     @Override
     public Collection<Integer> fromString(String data) {
-        if ("".equals(data)) return List.of();
+        if (data.isEmpty()) return List.of();
 
         String[] tokens = data.split(delimiter);
 

@@ -13,6 +13,7 @@
         <option value="$PROJECT_DIR$/gateway/pom.xml" />
         <option value="$PROJECT_DIR$/ws_videojuego/pom.xml" />
         <option value="$PROJECT_DIR$/ws_desarrollador/pom.xml" />
+        <option value="$PROJECT_DIR$/www/pom.xml" />
       </list>
     </option>
   </component>

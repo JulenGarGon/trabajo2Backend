@@ -2,6 +2,7 @@ package es.upsa.dasi.trabajo2.gateway.adapters.input.rest.providers;
 
 import es.upsa.dasi.trabajo2.domain.entities.Videojuego;
 import es.upsa.dasi.trabajo2.domain.exceptions.AppException;
+import es.upsa.dasi.trabajo2.gateway.adapters.input.rest.providers.annotations.Delimiter;
 import es.upsa.dasi.trabajo2.gateway.application.dtos.VideojuegoDto;
 import es.upsa.dasi.trabajo2.gateway.application.mappers.Mappers;
 import es.upsa.dasi.trabajo2.gateway.application.usecases.videojuegos.*;
@@ -46,7 +47,7 @@ public class VideojuegoResource {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response findAllVideojuegos(@DefaultValue("") @QueryParam("ids") Collection<Integer> ids) throws AppException{
+    public Response findAllVideojuegos(@Delimiter(",") @DefaultValue("") @QueryParam("ids") Collection<Integer> ids) throws AppException{
 
         List<Videojuego> videojuegos = ids.isEmpty()? findAllVideojuegosUseCase.execute() : findVideojuegosByIdsUseCase.execute(ids);
         return  Response.ok()

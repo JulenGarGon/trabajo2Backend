@@ -10,7 +10,7 @@ import java.time.LocalDate;
 public record Videojuego(int id,
                          String nombre,
                          String genero,
-                         LocalDate estreno,
+                         String estreno,
                          String portada,
                          float duracion,
                          float tamanio,

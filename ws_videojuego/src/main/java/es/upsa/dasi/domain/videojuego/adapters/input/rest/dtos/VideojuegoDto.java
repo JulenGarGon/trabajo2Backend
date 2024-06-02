@@ -10,7 +10,7 @@ public class VideojuegoDto {
     private int id;
     private String nombre;
     private String genero;
-    private LocalDate estreno;
+    private String estreno;
     private String portada;
     private float duracion;
     private float tamanio;

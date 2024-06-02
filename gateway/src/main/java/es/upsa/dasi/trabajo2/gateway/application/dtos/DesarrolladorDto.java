@@ -14,7 +14,7 @@ import java.time.LocalDate;
 public class DesarrolladorDto {
     private int id;
     private String nombre;
-    private LocalDate fundacion;
+    private String fundacion;
     private String fundador;
     private int empleados;
     private String sede;

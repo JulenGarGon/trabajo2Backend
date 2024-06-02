@@ -36,7 +36,7 @@ public class DatabaseDaoImpl implements DatabaseDao {
                 desarrolladores.add(Desarrollador.builder()
                                                 .withId(rs.getInt(1))
                                                 .withNombre(rs.getString(2))
-                                                .withFundacion(rs.getDate(3).toLocalDate())
+                                                .withFundacion(rs.getString(3))
                                                 .withFundador(rs.getString(4))
                                                 .withSitioWeb(rs.getString(5))
                                                 .withEmpleados(rs.getInt(6))
@@ -71,7 +71,7 @@ public class DatabaseDaoImpl implements DatabaseDao {
                 return Optional.of(Desarrollador.builder()
                                                 .withId(rs.getInt(1))
                                                 .withNombre(rs.getString(2))
-                                                .withFundacion(rs.getDate(3).toLocalDate())
+                                                .withFundacion(rs.getString(3))
                                                 .withFundador(rs.getString(4))
                                                 .withSitioWeb(rs.getString(5))
                                                 .withEmpleados(rs.getInt(6))
@@ -105,7 +105,7 @@ public class DatabaseDaoImpl implements DatabaseDao {
                 return Optional.of(Desarrollador.builder()
                                                 .withId(rs.getInt(1))
                                                 .withNombre(rs.getString(2))
-                                                .withFundacion(rs.getDate(3).toLocalDate())
+                                                .withFundacion(rs.getString(3))
                                                 .withFundador(rs.getString(4))
                                                 .withSitioWeb(rs.getString(5))
                                                 .withEmpleados(rs.getInt(6))
@@ -132,7 +132,7 @@ public class DatabaseDaoImpl implements DatabaseDao {
            PreparedStatement ps = connection.prepareStatement(SQL, columns)){
 
             ps.setString(1, desarrollador.nombre());
-            ps.setDate(2, Date.valueOf(desarrollador.fundacion()));
+            ps.setString(2, desarrollador.fundacion());
             ps.setString(3, desarrollador.fundador());
             ps.setInt(4, desarrollador.empleados());
             ps.setString(5, desarrollador.sede());
@@ -188,7 +188,7 @@ public class DatabaseDaoImpl implements DatabaseDao {
             PreparedStatement ps = connection.prepareStatement(SQL))
         {
             ps.setString(1, desarrollador.nombre());
-            ps.setDate(2, Date.valueOf(desarrollador.fundacion()));
+            ps.setString(2, desarrollador.fundacion());
             ps.setString(3, desarrollador.fundador());
             ps.setInt(4, desarrollador.empleados());
             ps.setString(5, desarrollador.sede());

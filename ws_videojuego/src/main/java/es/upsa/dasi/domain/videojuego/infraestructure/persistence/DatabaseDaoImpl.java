@@ -39,7 +39,7 @@ public class DatabaseDaoImpl implements DatabaseDao {
                                             .withId(rs.getInt(1))
                                             .withNombre(rs.getString(2))
                                             .withGenero(rs.getString(3))
-                                            .withEstreno(rs.getDate(4).toLocalDate())
+                                            .withEstreno(rs.getString(4))
                                             .withPortada(rs.getString(5))
                                             .withDuracion(rs.getFloat(6))
                                             .withTamanio(rs.getFloat(7))
@@ -74,7 +74,7 @@ public class DatabaseDaoImpl implements DatabaseDao {
                                                     .withId(rs.getInt(1))
                                                     .withNombre(rs.getString(2))
                                                     .withGenero(rs.getString(3))
-                                                    .withEstreno(rs.getDate(4).toLocalDate())
+                                                    .withEstreno(rs.getString(4))
                                                     .withPortada(rs.getString(5))
                                                     .withDuracion(rs.getFloat(6))
                                                     .withTamanio(rs.getFloat(7))
@@ -117,7 +117,7 @@ public class DatabaseDaoImpl implements DatabaseDao {
                             .withId(rs.getInt(1))
                             .withNombre(rs.getString(2))
                             .withGenero(rs.getString(3))
-                            .withEstreno(rs.getDate(4).toLocalDate())
+                            .withEstreno(rs.getString(4))
                             .withPortada(rs.getString(5))
                             .withDuracion(rs.getFloat(6))
                             .withTamanio(rs.getFloat(7))
@@ -154,7 +154,7 @@ public class DatabaseDaoImpl implements DatabaseDao {
                                 .withId(rs.getInt(1))
                                 .withNombre(rs.getString(2))
                                 .withGenero(rs.getString(3))
-                                .withEstreno(rs.getDate(4).toLocalDate())
+                                .withEstreno(rs.getString(4))
                                 .withPortada(rs.getString(5))
                                 .withDuracion(rs.getFloat(6))
                                 .withTamanio(rs.getFloat(7))
@@ -202,7 +202,7 @@ public class DatabaseDaoImpl implements DatabaseDao {
 
             preparedStatement.setString(1,videojuego.nombre());
             preparedStatement.setString(2,videojuego.genero());
-            preparedStatement.setDate(3, (videojuego.estreno()!=null)? Date.valueOf(videojuego.estreno()) : null);
+            preparedStatement.setString(3, videojuego.estreno());
             preparedStatement.setString(4,videojuego.portada());
             preparedStatement.setFloat(5,videojuego.duracion());
             preparedStatement.setFloat(6,videojuego.tamanio());
@@ -243,7 +243,7 @@ public class DatabaseDaoImpl implements DatabaseDao {
         PreparedStatement ps = connection.prepareStatement(SQL)){
             ps.setString(1, videojuego.nombre());
             ps.setString(2, videojuego.genero());
-            ps.setDate(3, Date.valueOf(videojuego.estreno()));
+            ps.setString(3, videojuego.estreno());
             ps.setString(4, videojuego.portada());
             ps.setFloat(5, videojuego.duracion());
             ps.setFloat(6, videojuego.tamanio());

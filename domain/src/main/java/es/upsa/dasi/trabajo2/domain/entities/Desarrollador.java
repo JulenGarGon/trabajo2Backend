@@ -9,7 +9,7 @@ import java.time.LocalDate;
 @With
 public record Desarrollador (int id,
                              String nombre,
-                             LocalDate fundacion,
+                             String fundacion,
                              String fundador,
                              int empleados,
                              String sede,
